@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    header("Location: pages/login.php");
+    exit();
+}
+
+include 'conexao.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,11 +18,16 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    
     <title>Senai Flix</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    
 </head>
 <body>
+    
+
     <?php include 'header.php'; ?>
 
     <div class="container-fluid my-5">
